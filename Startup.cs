@@ -46,8 +46,8 @@ namespace Shop
             });
 
             //Informa o ASP NET CORE que ele deve usar o Entity Framework (DbContext)
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
-            //services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 
             //Options are Scoped(escopo da transacao), Transient(cria um novo a cada conexao), Singleton(uma instancia por aplicacao)
             services.AddScoped<DataContext, DataContext>();
